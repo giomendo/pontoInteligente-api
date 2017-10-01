@@ -1,4 +1,4 @@
-package br.com.estudos.springboot.pontointeligente.api.Controllers;
+package br.com.estudos.springboot.pontointeligente.api.controllers;
 
 
 import br.com.estudos.springboot.pontointeligente.api.dtos.CadastroPJDto;
