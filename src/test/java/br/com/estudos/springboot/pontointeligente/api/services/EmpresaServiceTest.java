@@ -7,7 +7,7 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.BDDMockito;
+import static org.mockito.BDDMockito.given;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -32,8 +32,8 @@ public class EmpresaServiceTest {
 
     @Before
     public void setUp() {
-        BDDMockito.given(this.empresaRepository.findByCnpj(Mockito.anyString())).willReturn(new Empresa());
-        BDDMockito.given(this.empresaRepository.save(Mockito.any(Empresa.class))).willReturn(new Empresa());
+        given(this.empresaRepository.findByCnpj(Mockito.anyString())).willReturn(new Empresa());
+        given(this.empresaRepository.save(Mockito.any(Empresa.class))).willReturn(new Empresa());
     }
 
     @Test

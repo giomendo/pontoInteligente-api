@@ -4,7 +4,7 @@ import br.com.estudos.springboot.pontointeligente.api.entities.Empresa;
 import br.com.estudos.springboot.pontointeligente.api.services.EmpresaService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.BDDMockito;
+import static org.mockito.BDDMockito.given;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -40,7 +40,7 @@ public class EmpresaControllerTest {
 
     @Test
     public void testeBuscarEmpresaPorCnpjInvalido() throws Exception {
-        BDDMockito.given(empresaService.buscarPorCnpj(Mockito.anyString())).willReturn(Optional.empty());
+        given(empresaService.buscarPorCnpj(Mockito.anyString())).willReturn(Optional.empty());
 
         mvc.perform(MockMvcRequestBuilders.get(BUSCAR_EMPRESA_CNPJ_URL + CNPJ)
                 .accept(MediaType.APPLICATION_JSON))
@@ -50,7 +50,7 @@ public class EmpresaControllerTest {
 
     @Test
     public void testeBuscarEmpresaPorCnpjValido() throws Exception {
-        BDDMockito.given(empresaService.buscarPorCnpj(Mockito.anyString())).willReturn(Optional.of(this.obterDadosEmpresa()));
+        given(empresaService.buscarPorCnpj(Mockito.anyString())).willReturn(Optional.of(this.obterDadosEmpresa()));
 
         mvc.perform(MockMvcRequestBuilders.get(BUSCAR_EMPRESA_CNPJ_URL + CNPJ)
                 .accept(MediaType.APPLICATION_JSON))

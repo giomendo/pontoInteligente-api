@@ -1,6 +1,5 @@
 package br.com.estudos.springboot.pontointeligente.api.services;
 
-import br.com.estudos.springboot.pontointeligente.api.entities.Funcionario;
 import br.com.estudos.springboot.pontointeligente.api.entities.Lancamento;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

@@ -5,7 +5,7 @@ import br.com.estudos.springboot.pontointeligente.api.repository.LancamentoRepos
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.BDDMockito;
+import static org.mockito.BDDMockito.given;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -35,10 +35,10 @@ public class LancamentoServiceTest {
 
     @Before
     public void setUp() {
-        BDDMockito.given(lancamentoRepository.findByFuncionarioId(Mockito.anyLong(), Mockito.any(PageRequest.class)))
+        given(lancamentoRepository.findByFuncionarioId(Mockito.anyLong(), Mockito.any(PageRequest.class)))
                 .willReturn(new PageImpl<Lancamento>(new ArrayList<Lancamento>()));
-        BDDMockito.given(lancamentoRepository.findOne(Mockito.anyLong())).willReturn(new Lancamento());
-        BDDMockito.given(lancamentoRepository.save(Mockito.any(Lancamento.class))).willReturn(new Lancamento());
+        given(lancamentoRepository.findOne(Mockito.anyLong())).willReturn(new Lancamento());
+        given(lancamentoRepository.save(Mockito.any(Lancamento.class))).willReturn(new Lancamento());
     }
 
     @Test

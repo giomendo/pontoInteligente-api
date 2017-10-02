@@ -47,7 +47,7 @@ public class CadastroPJController {
      */
     @PostMapping
     public ResponseEntity<Response<CadastroPJDto>> cadastrar(@Valid @RequestBody CadastroPJDto cadastroPjDto,
-                                                             BindingResult result) throws NoSuchAlgorithmException {
+                                                              BindingResult result) throws NoSuchAlgorithmException {
 
         log.info("Cadastrando PJ {}", cadastroPjDto.toString());
         Response<CadastroPJDto> response = new Response<CadastroPJDto>();
