@@ -11,7 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Transactional(readOnly = true)
+
+
 @NamedQueries({
         @NamedQuery(name="LancamentoRepository.findByFuncionarioId",
         query = "SELECT lanc FROM Lancamento lanc WHERE lanc.funcionario.id = :funcionarioId") })

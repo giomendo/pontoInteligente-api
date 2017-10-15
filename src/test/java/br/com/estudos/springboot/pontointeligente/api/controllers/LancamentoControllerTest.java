@@ -95,7 +95,7 @@ public class LancamentoControllerTest {
                 .andExpect(status().isOk());
     }
 
-    //@Test
+    @Test
     @WithMockUser(username = "user@user.com", roles = {"USUARIO"})
     public void testRemoverLancamentoAcessoNegado() throws Exception {
         given(this.lancamentoService.buscarPorId(Mockito.anyLong())).willReturn(Optional.of(new Lancamento()));
